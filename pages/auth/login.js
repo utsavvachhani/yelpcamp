@@ -1,7 +1,7 @@
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { signIn } from 'next-auth/react'
-import { FaGoogle, FaFacebook } from 'react-icons/fa'
+import { FaGoogle, FaGithub } from 'react-icons/fa'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 import Link from 'next/link'
@@ -86,26 +86,26 @@ const Login = () => {
           or
           <hr className='flex-1' />
         </div>
-        <div className='justify-betwee flex flex-col items-center gap-4 sm:flex-row'>
+        <div className='flex flex-col items-center gap-3'>
           <button
-            className='flex w-full flex-1 items-center justify-center gap-2 rounded-md border-2 border-blue bg-blue px-4 py-3 text-primaryBg transition-colors hover:bg-transparent hover:text-blue'
+            type='button'
+            className='flex w-full items-center justify-center gap-2 rounded-md border-2 border-blue bg-blue px-4 py-3 text-primaryBg transition-colors hover:bg-transparent hover:text-blue'
             onClick={() =>
               signIn('google', { callbackUrl: router.query.callbackUrl || '/' })
             }
           >
             <FaGoogle />
-            Google
+            Continue with Google
           </button>
           <button
-            className='flex w-full flex-1 items-center justify-center gap-2 rounded-md border-2 border-blue bg-blue px-4 py-3 text-primaryBg transition-colors hover:bg-transparent hover:text-blue'
+            type='button'
+            className='flex w-full items-center justify-center gap-2 rounded-md border-2 border-[#24292F] bg-[#24292F] px-4 py-3 text-primaryBg transition-colors hover:bg-transparent hover:text-[#24292F]'
             onClick={() =>
-              signIn('facebook', {
-                callbackUrl: router.query.callbackUrl || '/',
-              })
+              signIn('github', { callbackUrl: router.query.callbackUrl || '/' })
             }
           >
-            <FaFacebook />
-            Facebook
+            <FaGithub />
+            Continue with GitHub
           </button>
         </div>
         <p className='mx-auto'>

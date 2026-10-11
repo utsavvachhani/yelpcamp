@@ -26,7 +26,7 @@ const userSchema = new Schema(
     },
     auth_type: {
       type: [String],
-      enum: ['credentials', 'google', 'facebook'],
+      enum: ['credentials', 'google'],
       required: true,
     },
     campgrounds: {
